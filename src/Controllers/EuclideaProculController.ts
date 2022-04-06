@@ -1,14 +1,10 @@
 import { Request, Response } from 'express'
 import EuclideaProculService from "../Services/EuclideaProculService";
 
-interface IReturn {
-    minProcul: string;
-    maxProcul: string;
-    allProcul: string[];
-}
-
-interface IRequest {
-    address: string;
+interface IResponse {
+    minDistance: string[];
+    maxDistance: string[];
+    allComparation: string[];
 }
 
 export default class EuclideaProculController {
@@ -16,12 +12,15 @@ export default class EuclideaProculController {
         request: Request,
         response: Response,
     ): Promise<Response> {
-        const address: any = request.params.end
+        const { address, keyGoogle } = request.body
 
         const euclideaProculService = new EuclideaProculService()
 
-        const returnData = await euclideaProculService.execute()
+        const returnData: IResponse = await euclideaProculService.execute({
+            address,
+            keyGoogle,
+        })
 
-        return response.json(address)
+        return response.json(returnData)
     }
 }
