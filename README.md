@@ -57,7 +57,7 @@ yarn dev
 Esse comando vai iniciar a aplicação no seu localhost, para acessar basta abrir em qualquer navegador nesse endereço: 
  [http://localhost:3333](http://localhost:3333). 
 
-Para obter um resultado mais prático e visível eu indigo o donwload de algum software de requisições REST como o [Insomnia](https://insomnia.rest/download) ou [Postman](https://www.postman.com/downloads/).
+Para obter um resultado mais prático e visível eu indigo o download de algum software de requisições REST como o [Insomnia](https://insomnia.rest/download) ou [Postman](https://www.postman.com/downloads/).
 
 Crie uma nova requisição do tipo `GET`:
 
