@@ -1,9 +1,10 @@
-import { Request, Response } from 'express'
+import { Router } from 'express'
 
-import CreateRouteService from '../Services/CreateRouteService'
+import EuclideaProculController from '../Controllers/EuclideaProculController'
 
-export function createRouteService(request: Request, response: Response) {
-    CreateRouteService.execute("request.body.address")
+const euclideaProculController = new EuclideaProculController()
+const euclideaRoute = Router()
 
-    return response.send()
-}
+euclideaRoute.get('/', euclideaProculController.create)
+
+export default euclideaRoute
